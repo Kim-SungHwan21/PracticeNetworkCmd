@@ -12,21 +12,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.StringTokenizer;
 import java.util.concurrent.ConcurrentHashMap;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class NetCatServer {
-    // clientId: 클라이언트 전송용 OutputStream
     private final ConcurrentHashMap<String, DataOutputStream> clientOutMap = new ConcurrentHashMap();
-//    private int port;
-//    ClientSession session;
-static String cmd;
-static String optionOrHostname;
-static String port;
+    static String cmd;
+    static String optionOrHostname;
+    static String port;
 
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
